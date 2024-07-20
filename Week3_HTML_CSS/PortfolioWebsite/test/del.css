@@ -1,0 +1,180 @@
+body {
+    background-color: #f8f9fa;
+    transition: background-color 0.35s, color 0.5s;
+}
+
+body.light-theme {
+    background-color: #f8f9fa;
+    color: #000;
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+
+body.dark-theme {
+    background-color: #343a40;
+    color: #fff;
+    --background-color: #121212;
+    --text-color: #ffffff;
+}
+
+.navbar {
+    box-shadow: 0 4px 2px -2px gray;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.light-theme .navbar {
+    background-color: #ffffff;
+    color: #000;
+    --nav-background: #343a40;
+    --nav-text-color: #ffffff;
+}
+
+body.dark-theme .navbar {
+    background-color: #343a40;
+    color: #fff;
+    --nav-background: #000000;
+    --nav-text-color: #ffffff;
+}
+
+body.light-theme .card-body {
+    background-color: #ffffff;
+    color: #000;
+    --nav-background: #343a40;
+    --nav-text-color: #ffffff;
+}
+
+body.dark-theme .card-body {
+    background-color: #343a40;
+    color: #fff;
+    --nav-background: #000000;
+    --nav-text-color: #ffffff;
+}
+
+.navbar-brand,
+.navbar-brand:focus,
+.navbar-brand:active {
+    font-weight: bold;
+    color: var(--nav-text-color) !important;
+}
+
+.navbar-brand:hover {
+    font-weight: bold;
+    text-decoration: underline !important;
+    color: #fdb715 !important;
+}
+
+ul li a:hover {
+    text-decoration: inherit;
+    font-weight: bold;
+    color: rgb(244, 110, 27) !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    padding: 0.5rem 1rem;
+}
+
+.search-icon {
+    color: inherit;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#search-form {
+    display: none;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        text-align: center;
+    }
+
+    #search-form {
+        width: 100%;
+    }
+}
+
+body {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.navbar {
+    background-color: var(--nav-background) !important;
+    color: var(--nav-text-color) !important;
+}
+
+.nav-link {
+    color: var(--nav-text-color) !important;
+}
+
+.btn-outline-success {
+    color: var(--text-color) !important;
+    border-color: var(--text-color) !important;
+}
+
+#search-btn {
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+/* Overlay effect for the About Me card */
+.about-me-card {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    border: 2px solid transparent;
+    z-index: 2;
+}
+
+.about-me-card.visible {
+    opacity: 1;
+    visibility: visible;
+    border: 2px solid #000;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#main-bg.card-img {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+.content {
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+        scale: 1.2;
+    }
+    50% {
+        opacity: 0.7;
+        scale: 1.3;
+    }
+    75% {
+        opacity: 1;
+        scale: 1.2;
+    }
+    100% {
+        opacity: 0;
+        color: #fff !important;
+    }
+}
+
+#blinker {
+    animation: blink 1.5s ease 0s 2;
+}

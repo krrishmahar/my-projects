@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Projects</title>
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- using sholace for better carousel and model -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/themes/light.css" />
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/shoelace-autoloader.js"></script>
+
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+
+<body>
+
+    <div class="bg-container"></div>
+
+    <div class="container text-center" style="display: inline;">
+        <div class="d-grid" style="grid-template-columns: 1fr 2fr 1fr;">
+            <div class="">
+                <a href="/test/test.html">
+                    <i class="fa fa-home fs-3" aria-hidden="true">Home</i>
+                </a>
+            </div>
+            <div class="">
+
+                <div class="row text-light">
+                    <div class="d-grid" style="grid-template-columns: 1fr;">
+                        <h1>Projects</h1>
+                        <p>A growing collection of projects</p>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="btn-group dropstart">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-expanded="false">
+                        Menu
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Projects</a></li>
+                        <li><a class="dropdown-item" href="#">Blog</a></li>
+                        <li><a class="dropdown-item" href="/test/test.html">About Me</a></li>
+                        <li><a class="dropdown-item" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <header>
+            <div class="projects d-grid" style="grid-template-columns: 1fr;  align-items: center;">
+                <p class="fs-3 text-light">
+                    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+        </header>
+
+        <article>
+            <div class="container d-grid" style="grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 666px;">
+
+                <div class="card bg-body-tertiary" style="width: 18rem; height: 32rem;">
+                    <img src="/static/img/idk2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">User-Friendly Interface: </h5>
+                        <p class="card-text">
+                            The application includes a simple, intuitive user interface that allows users to join the
+                            chat, send messages, and view messages from other users in real-time. Simplicity at Peak
+                        </p>
+                    </div>
+                </div>
+
+                <div class="" style="color: #fff; padding: 1px 30px;">
+                    <div class="fs-2" style="text-decoration: underline;">Chat Application in JAVA</div>
+                    <p>This project is a real-time chat application developed in Java, utilizing Maven as the build tool
+                        and WebSocket for enabling bi-directional communication between clients and the server. This
+                        chat application is a fundamental exercise in understanding and implementing real-time
+                        communication in Java, leveraging modern tools and technologies.</p>
+                    <p>Backend: The server-side of the application is built using Java and the WebSocket API. The server
+                        is responsible for handling incoming WebSocket connections, broadcasting messages to all
+                        connected clients, and managing the overall communication logic.</p>
+                    <p>Frontend: The client-side is typically a web application that connects to the WebSocket server.
+                        It provides the interface for users to send and receive messages.</p>
+                    <p>Dependencies: Maven is used to manage dependencies such as Java-WebSocket, ensuring that all
+                        required libraries are included and up-to-date.</p>
+                    <div>
+                        GitHub repo: <a
+                            href="https://github.com/krrishmahar/project-series/tree/main/Week1_Java/ChatApplication">Click
+                            Here</a>
+                    </div>
+                </div>
+
+                <div class="card"
+                    style="width: 18rem; height: 32rem; margin-left: 90px; animation: up-animation-2 2s ease-in-out 1s 1 forwards;">
+                    <img src="/static/img/idk3.png" class="card-img-top border border-black" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Real-Time Messaging:</h5>
+                        <p class="card-text">
+                            The core feature of this application is to allow multiple users to communicate in real-time
+                            through a WebSocket connection ensuring that messages are sent and received instantly.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </div>
+
+
+    <header>
+        <div class="projects d-grid" style=" justify-content: center;">
+            <p class="fs-3 text-light">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━Open
+                Source━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+    </header>
+
+    <article class="projects d-grid"
+        style="grid-template-columns: 80rem; grid-template-rows: 720px; justify-content: center; align-items: center; ">
+
+        <sl-carousel class="wrapper aspect-ratio caro-item" navigation autoplay loop pagination
+            style="--aspect-ratio: 16/9;">
+            <sl-carousel-item>
+                <img alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
+                    src="/static/img2/ss1.png" />
+            </sl-carousel-item>
+            <sl-carousel-item>
+                <img alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
+                    src="/static/img2/ss2.png" />
+            </sl-carousel-item>
+            <sl-carousel-item>
+                <img alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
+                    src="/static/img2/ss3.png" />
+            </sl-carousel-item>
+        </sl-carousel>
+
+    </article>
+
+    <article>
+        <div class="d-grid text-light"
+            style="grid-template-columns: 80rem; grid-template-rows: auto; justify-content: center; align-items: center; margin-top: 2rem; ">
+            <p>
+
+                The Network Scanner project, part of the "project-series" repository, focuses on developing a tool
+                for scanning and analyzing network devices. This project, built during the second week of the
+                networking series, demonstrates practical applications of network programming concepts and provides
+                a foundation for understanding network security and diagnostics.
+            </p>
+            <br>
+            <h3>Key Feature</h3>
+            <p>Device Discovery:
+
+                The Network Scanner can detect devices connected to a local network. This feature is crucial for
+                network administrators to identify all active devices within a subnet.
+            </p>
+            <p> Port Scanning:
+
+                It includes functionality to scan open ports on the discovered devices. This helps in identifying
+                potential vulnerabilities, as open ports can be entry points for unauthorized access.
+            </p>
+            <p>
+                Ping Sweep:
+
+                The scanner can perform a ping sweep, sending ICMP echo requests to a range of IP addresses to
+                determine which hosts are up. This is useful for mapping out network topology and identifying active
+                devices.
+            </p>
+            <p>
+                Multi-threading:
+
+                To enhance performance, the tool uses multi-threading for simultaneous scanning of multiple devices
+                and ports, significantly reducing the time required for a complete network scan.
+            </p>
+        </div>
+    </article>
+
+
+    <header>
+        <div class="projects d-grid" style=" justify-content: center;">
+            <p class="fs-3 text-light">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━Upcoming
+                Soon━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+    </header>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+
+</html>
