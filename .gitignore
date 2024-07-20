@@ -53,6 +53,7 @@ __pycache__/
 *.env/
 *.flaskenv/
 *.venv/
+venv/
 *.myenv/
 *.ENV/
 env.bak/
