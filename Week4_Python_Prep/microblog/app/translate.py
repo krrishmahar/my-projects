@@ -1,13 +1,13 @@
 import requests
+from flask import current_app
 from flask_babel import _
-from app import app
 
 def translate(text, source_language, dest_language):
-    if 'GOOGLE_API_KEY' not in app.config or \
-            not app.config['GOOGLE_API_KEY']:
+    if 'GOOGLE_API_KEY' not in current_app.config or \
+            not current_app.config['GOOGLE_API_KEY']:
         return _('Error: the translation service is not configured.')
 
-    api_key = app.config['GOOGLE_API_KEY']
+    api_key = current_app.config['GOOGLE_API_KEY']
     url = f'https://translation.googleapis.com/language/translate/v2?key={api_key}'
     params = {
         'q': text,
