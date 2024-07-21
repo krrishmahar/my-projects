@@ -16,6 +16,7 @@ class Config:
     ADMINS = ['learn.krrish@gmail.com','krrishmahar5@gmail.com', 'krrishmahar@gmail.com']
     POSTS_PER_PAGE = 25
     LANGUAGES = ['en', 'es', 'hi', 'sa', 'zh', 'mr']
+    GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
 
 
 
