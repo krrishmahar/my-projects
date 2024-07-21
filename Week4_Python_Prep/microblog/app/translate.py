@@ -1,18 +1,21 @@
-from google.cloud import translate_v2 as google_translate
+import requests
 from flask_babel import _
 from app import app
-    
+
 def translate(text, source_language, dest_language):
-    if 'GOOGLE_APPLICATION_CREDENTIALS' not in app.config or \
-            not app.config['GOOGLE_APPLICATION_CREDENTIALS']:
-        return 'Error: the translation service is not configured.'
+    if 'GOOGLE_API_KEY' not in app.config or \
+            not app.config['GOOGLE_API_KEY']:
+        return _('Error: the translation service is not configured.')
+
+    api_key = app.config['GOOGLE_API_KEY']
+    url = f'https://translation.googleapis.com/language/translate/v2?key={api_key}'
+    params = {
+        'q': text,
+        'source': source_language,
+        'target': dest_language,
+    }
     
-    translate_client = google_translate.Client()
-
-    try:
-        result = translate_client.translate(
-            text, source_language=source_language, target_language=dest_language)
-    except Exception as e:
-        return f'Error: the translation service failed. {str(e)}'
-
-    return result['translatedText']
+    response = requests.post(url, params=params, json=[{'format':text}])
+    if response.status_code != 200:
+        return _('Error: the translation service failed. {}').format(response.status_code)
+    return response.json()[0]['translations'][0]['text']
