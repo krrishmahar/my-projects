@@ -108,7 +108,7 @@ class User(UserMixin, db.Model):
             return
         return db.session.get(User, id)
 
-class SearchableMixin(object):
+class SearchableMixin:
     @classmethod
     def search(cls, expression, page, per_page):
         ids, total = query_index(cls.__tablename__, expression, page, per_page)
@@ -146,6 +146,7 @@ class SearchableMixin(object):
     def reindex(cls):
         for obj in db.session.scalars(sa.select(cls)):
             add_to_index(cls.__tablename__, obj)
+
 
 db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
 db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)

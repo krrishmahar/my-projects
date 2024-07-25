@@ -17,7 +17,7 @@ class Config:
     POSTS_PER_PAGE = 25
     LANGUAGES = ['en', 'es', 'hi', 'sa', 'zh', 'mr']
     GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
-    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL') or 'http://localhost:9200'
 
 
 
